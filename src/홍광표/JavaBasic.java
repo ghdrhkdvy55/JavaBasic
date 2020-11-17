@@ -1,0 +1,7 @@
+package 홍광표;
+
+public class JavaBasic {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!!");
+    }
+}
