@@ -23,60 +23,51 @@ public class SungJukV2 {
         //변수선언
         String name = "";
         int kor, eng, mat;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("이름을 입력해주세요 : ");
-        name = scanner.nextLine();
-        System.out.println("국어 점수를 입력해주세요 : ");
-        kor = scanner.nextInt();
-        System.out.println("영어 점수를 입력해주세요 : ");
-        eng = scanner.nextInt();
-        System.out.println("수학 점수를 입력해주세요 : ");
-        mat = scanner.nextInt();
-
         int sum = 0;
         double mean = 0.0;
         char grd = '가';
         //처리
+        //성적데이터를
+        //scanner 클래스 초기화
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("이름을 입력해주세요 : ");
+        name = scanner.nextLine();
+        System.out.print("\n국어 점수를 입력해주세요 : ");
+        kor = scanner.nextInt();
+        System.out.print("\n영어 점수를 입력해주세요 : ");
+        eng = scanner.nextInt();
+        System.out.print("\n수학 점수를 입력해주세요 : ");
+        mat = scanner.nextInt();
+
         sum = kor + eng + mat;
-        //mean = (kor + eng+ mat) /3
         mean = (double)sum/3;
-
-
-
-
+        //String.format(형식지정자, 변수들)
+        mean = Double.parseDouble(String.format("%.1f", mean));
         //결과출력
-
-
-
-
-
-
-
-
+        //학점계산은 switch문으로 처리
         System.out.println("---------------");
+        System.out.println("이름 :" + name);
+        System.out.println("국어 :" + kor);
+        System.out.println("영어 :" + eng);
+        System.out.println("수학 :" + mat);
+        System.out.println("---------------");
+        System.out.println("총합 :" + sum);
+        System.out.println("평균 :" + mean);
+        //System.out.printf("평균 : %.1f\n" , mean);
 
-        grd = (mean>=90) ? '수' :
-              (mean>=80) ? '우' :
-              (mean>=70) ? '미' :
-              (mean>=60) ? '양' : '가';
-        System.out.println("총점 : " + sum);
-        System.out.printf("평균 : %.1f", mean);
-        switch (grd){
-            case '수' :
-                System.out.println("학점은 '수' 입니다");
-                break;
-            case '우' :
-                System.out.println("학점은 '우' 입니다");
-                break;
-            case '미' :
-                System.out.println("학점은 '우' 입니다");
-                break;
-            case '양' :
-                System.out.println("학점은 '우' 입니다");
-                break;
-            case '가' :
-                System.out.println("학점은 '우' 입니다");
-
+        switch ((int)mean/10){
+            case 10 :
+                System.out.println("학점은 '수' 입니다"); break;
+            case 9 :
+                System.out.println("학점은 '수' 입니다"); break;
+            case 8 :
+                System.out.println("학점은 '우' 입니다"); break;
+            case 7 :
+                System.out.println("학점은 '미' 입니다"); break;
+            case 6 :
+                System.out.println("학점은 '양' 입니다"); break;
+            case 5 :
+                System.out.println("학점은 '가' 입니다");
         }
 
 
