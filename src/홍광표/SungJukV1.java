@@ -11,35 +11,35 @@ package 홍광표;
  * 만점은 100점으로
  * 100~90, 89~80, 79~70, 69~60, 59~0
  * name, kor, eng, mat, sum, mean, grd
+ *
+ * 삼항연산자 : (조건식) ? 참일때 처리 : 거짓일때 처리
  */
 public class SungJukV1 {
     public static void main(String[] args) {
-        String name = "혜교";
-        int kor = 0, eng = 0, mat = 0, sum, mean;
-        char grd;
-        sum = kor+eng+mat;
-        mean = sum/3;
+        //변수선언
+        String name = "지현";
+        int kor = 99;
+        int eng = 98;
+        int mat = 99;
+        int sum = 0;
+        double mean = 0.0;
+        char grd = '가';
+        //처리
+        sum = kor + eng + mat;
+        //mean = (kor + eng+ mat) /3
+        mean = (double)sum/3;
+        grd = (mean>=90) ? '수' :
+            (mean>=80) ? '우' :
+            (mean>=70) ? '미' :
+            (mean>=60) ? '양' : '가';
+        //결과출력
         System.out.println("이름 : " + name);
         System.out.println("국어 : " + kor);
         System.out.println("영어 : " + eng);
         System.out.println("수학 : " + mat);
-
-        if(mean >89){
-            System.out.println("학점은 '수' 입니다");
-            grd = '수';
-        }else if(mean>79){
-            System.out.println("학점은 '우' 입니다");
-            grd = '우';
-        }else if(mean>69){
-            System.out.println("학점은 '미' 입니다");
-            grd = '미';
-        }else if(mean>59){
-            System.out.println("학점은 '양' 입니다");
-            grd = '양';
-        }else{
-            System.out.println("학점은 '가' 입니다");
-            grd = '가';
-        }
+        System.out.println("---------------");
+        System.out.println("총점 : " + sum);
+        System.out.println("평균 : " + mean);
 
 
     }
