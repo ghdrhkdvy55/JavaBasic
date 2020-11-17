@@ -60,7 +60,7 @@ public class SungJukV2 {
               (mean>=70) ? '미' :
               (mean>=60) ? '양' : '가';
         System.out.println("총점 : " + sum);
-        System.out.println("평균 : " + mean);
+        System.out.printf("평균 : %.1f", mean);
         switch (grd){
             case '수' :
                 System.out.println("학점은 '수' 입니다");
