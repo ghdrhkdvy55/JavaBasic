@@ -1,11 +1,11 @@
 package lab;
 
 public class Student {
-        int stuNum;
+        int stdno;
         String name;
-        String adr;
-        String bir;
-        String cName;
-        int teacher;
+        String addr;
+        String birth;
+        String dept;
+        String prof;
 
 }
